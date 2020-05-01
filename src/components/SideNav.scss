@@ -1,0 +1,43 @@
+.SideNav {
+    background-color: #2e2e2e;
+    min-width: 5rem;
+    color: #eee;
+
+    .SideNav-logo {
+        font-size: 3rem;
+        font-weight: bold;
+        background-color: #ff7903;
+        height: 80px;
+    }
+
+    .navItems {
+        list-style: none;
+    }
+
+    svg {
+        position: relative;
+        width: 3rem;
+        z-index: -1;
+    }
+
+    .navIcon {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        margin-top: 2rem;
+
+        cursor: pointer;
+
+        filter: grayscale(100%);
+        transition: all 100ms ease;
+
+        &:hover {
+            filter: grayscale(0);
+            transform: scale(1.2);
+        }
+
+        &:active {
+            transform: scale(1.1);
+        }
+    }
+}

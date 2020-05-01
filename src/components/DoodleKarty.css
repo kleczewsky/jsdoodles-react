@@ -1,0 +1,48 @@
+.Doodle {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    transition: all 1s ease;
+    animation: slide-in-left 0.5s;
+}
+
+#deck {
+    display: block;
+    position: absolute;
+    bottom: 0;
+
+    box-shadow: 3px 3px 15px #000000;
+    background-color: #9c999e8e;
+    width: 100%;
+    height: 30vh;
+    border-radius: 5px 5px 0 0;
+    font-family: "Roboto";
+    font-size: 50px;
+    text-align: center;
+    color: #bbbbbbbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rozdaj {
+    margin: 1rem;
+    z-index: 2;
+}
+#rozdaj > button {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

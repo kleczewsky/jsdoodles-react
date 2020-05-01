@@ -1,0 +1,46 @@
+.SideNav {
+  background-color: #2e2e2e;
+  min-width: 5rem;
+  color: #eee;
+}
+
+.SideNav .SideNav-logo {
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: #ff7903;
+  height: 80px;
+}
+
+.SideNav .navItems {
+  list-style: none;
+}
+
+.SideNav svg {
+  position: relative;
+  width: 3rem;
+  z-index: -1;
+}
+
+.SideNav .navIcon {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  margin-top: 2rem;
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+
+.SideNav .navIcon:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.SideNav .navIcon:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
