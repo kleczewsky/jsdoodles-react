@@ -13,17 +13,53 @@ export default function SideNav({ handleChange, activeDoodle }) {
             <div className="SideNav-logo">JS</div>
 
             <ul className="navItems">
-                <li id="karty" className="navIcon" onClick={handleChange}>
+                <li
+                    id="karty"
+                    className={
+                        activeDoodle === "karty"
+                            ? "navIcon selected"
+                            : "navIcon "
+                    }
+                    onClick={handleChange}
+                >
                     <CardsIcon />
+                    <p className="tooltip">karty</p>
                 </li>
-                <li id="samolot" className="navIcon" onClick={handleChange}>
+                <li
+                    id="samolot"
+                    className={
+                        activeDoodle === "samolot"
+                            ? "navIcon selected"
+                            : "navIcon "
+                    }
+                    onClick={handleChange}
+                >
                     <PlaneIcon />
+                    <p className="tooltip">samolot</p>
                 </li>
-                <li id="terminal" className="navIcon" onClick={handleChange}>
+                <li
+                    id="terminal"
+                    className={
+                        activeDoodle === "terminal"
+                            ? "navIcon selected"
+                            : "navIcon "
+                    }
+                    onClick={handleChange}
+                >
                     <SoftwareIcon />
+                    <p className="tooltip">terminal</p>
                 </li>
-                <li id="czas" className="navIcon" onClick={handleChange}>
+                <li
+                    id="czas"
+                    className={
+                        activeDoodle === "czas"
+                            ? "navIcon selected"
+                            : "navIcon "
+                    }
+                    onClick={handleChange}
+                >
                     <HourglassIcon />
+                    <p className="tooltip">czas</p>
                 </li>
             </ul>
         </div>

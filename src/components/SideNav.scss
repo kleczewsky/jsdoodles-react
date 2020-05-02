@@ -8,6 +8,13 @@
         font-weight: bold;
         background-color: #ff7903;
         height: 80px;
+        user-select: none;
+
+        transition: all 200ms ease;
+
+        &:hover {
+            animation: rainbow 4s ease-in infinite;
+        }
     }
 
     .navItems {
@@ -18,6 +25,8 @@
         position: relative;
         width: 3rem;
         z-index: -1;
+        pointer-events: none;
+        filter: grayscale(100%);
     }
 
     .navIcon {
@@ -25,19 +34,80 @@
         width: 100%;
         z-index: 2;
         margin-top: 2rem;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         cursor: pointer;
 
-        filter: grayscale(100%);
         transition: all 100ms ease;
 
+        .tooltip {
+            position: absolute;
+            opacity: 0;
+            right: -70%;
+            transform: translate(-200px);
+
+            color: black;
+            font-weight: 500;
+            background-color: rgb(255, 115, 21);
+
+            font-size: 11px;
+
+            border-radius: 5px;
+            padding: 3px 10px;
+
+            pointer-events: none;
+
+            transition: opacity 200ms ease-out, transform 150ms ease;
+        }
+
         &:hover {
-            filter: grayscale(0);
             transform: scale(1.2);
+
+            background-color: #25252e;
+            box-shadow: 5px 5px 10px #00000099;
+
+            & .tooltip {
+                opacity: 1;
+                transform: translate(0px);
+            }
+            & svg {
+                filter: grayscale(0);
+            }
         }
 
         &:active {
             transform: scale(1.1);
         }
+
+        &.selected > svg {
+            filter: grayscale(40%);
+        }
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        color: white;
+    }
+    20% {
+        color: purple;
+    }
+    35% {
+        color: Blue;
+    }
+    50% {
+        color: Green;
+    }
+    65% {
+        color: Orange;
+    }
+    80% {
+        color: Red;
+    }
+    100% {
+        color: white;
     }
 }

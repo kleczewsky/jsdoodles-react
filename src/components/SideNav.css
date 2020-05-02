@@ -9,6 +9,17 @@
   font-weight: bold;
   background-color: #ff7903;
   height: 80px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.SideNav .SideNav-logo:hover {
+  -webkit-animation: rainbow 4s ease-in infinite;
+          animation: rainbow 4s ease-in infinite;
 }
 
 .SideNav .navItems {
@@ -19,6 +30,9 @@
   position: relative;
   width: 3rem;
   z-index: -1;
+  pointer-events: none;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 .SideNav .navIcon {
@@ -26,21 +40,113 @@
   width: 100%;
   z-index: 2;
   margin-top: 2rem;
+  height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
   -webkit-transition: all 100ms ease;
   transition: all 100ms ease;
 }
 
+.SideNav .navIcon .tooltip {
+  position: absolute;
+  opacity: 0;
+  right: -70%;
+  -webkit-transform: translate(-200px);
+          transform: translate(-200px);
+  color: black;
+  font-weight: 500;
+  background-color: #ff7315;
+  font-size: 11px;
+  border-radius: 5px;
+  padding: 3px 10px;
+  pointer-events: none;
+  -webkit-transition: opacity 200ms ease-out, -webkit-transform 150ms ease;
+  transition: opacity 200ms ease-out, -webkit-transform 150ms ease;
+  transition: opacity 200ms ease-out, transform 150ms ease;
+  transition: opacity 200ms ease-out, transform 150ms ease, -webkit-transform 150ms ease;
+}
+
 .SideNav .navIcon:hover {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+  background-color: #25252e;
+  -webkit-box-shadow: 5px 5px 10px #00000099;
+          box-shadow: 5px 5px 10px #00000099;
+}
+
+.SideNav .navIcon:hover .tooltip {
+  opacity: 1;
+  -webkit-transform: translate(0px);
+          transform: translate(0px);
+}
+
+.SideNav .navIcon:hover svg {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 .SideNav .navIcon:active {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.SideNav .navIcon.selected > svg {
+  -webkit-filter: grayscale(40%);
+          filter: grayscale(40%);
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    color: white;
+  }
+  20% {
+    color: purple;
+  }
+  35% {
+    color: Blue;
+  }
+  50% {
+    color: Green;
+  }
+  65% {
+    color: Orange;
+  }
+  80% {
+    color: Red;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    color: white;
+  }
+  20% {
+    color: purple;
+  }
+  35% {
+    color: Blue;
+  }
+  50% {
+    color: Green;
+  }
+  65% {
+    color: Orange;
+  }
+  80% {
+    color: Red;
+  }
+  100% {
+    color: white;
+  }
 }
