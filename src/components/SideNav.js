@@ -23,7 +23,7 @@ export default function SideNav({ handleChange, activeDoodle }) {
                     onClick={handleChange}
                 >
                     <CardsIcon />
-                    <p className="tooltip">karty</p>
+                    <p className="tooltip">Karty</p>
                 </li>
                 <li
                     id="samolot"
@@ -35,7 +35,7 @@ export default function SideNav({ handleChange, activeDoodle }) {
                     onClick={handleChange}
                 >
                     <PlaneIcon />
-                    <p className="tooltip">samolot</p>
+                    <p className="tooltip">Napis</p>
                 </li>
                 <li
                     id="terminal"
